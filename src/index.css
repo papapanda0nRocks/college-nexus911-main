@@ -1,0 +1,153 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+    --primary: 202 100% 47%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 202 100% 47%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 202 100% 47%;
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+/* Custom classes for the application */
+@layer components {
+  /* Improve button contrast in light mode */
+  .light-mode-button {
+    @apply bg-collegenet-600 text-white hover:bg-collegenet-700 focus:ring-2 focus:ring-collegenet-500 focus:ring-offset-2;
+  }
+  
+  /* Improved footer design */
+  .footer-link {
+    @apply text-gray-700 dark:text-gray-300 hover:text-collegenet-600 dark:hover:text-collegenet-400 transition-colors;
+  }
+  
+  /* Enhancing social share buttons */
+  .social-button {
+    @apply transition-transform hover:scale-110 focus:ring-2 focus:ring-collegenet-500 focus:ring-offset-2;
+  }
+
+  /* Improved input contrast in light mode */
+  .input-light {
+    @apply bg-white border-gray-200 text-gray-900 focus:border-collegenet-500 focus:ring-collegenet-500;
+  }
+
+  /* Improved card contrast in light mode */
+  .card-light {
+    @apply bg-white border-gray-200 shadow-sm hover:shadow-md transition-shadow;
+  }
+
+  /* --- Glassy Navbar Styles --- */
+  .nav-glass-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(17, 24, 39, 0.92); /* #111827 with slight opacity */
+    border-radius: 32px;
+    border: 1px solid rgba(255,255,255,0.08);
+    padding: 8px 22px;
+    gap: 4px;
+    min-width: 220px;
+    box-shadow: 0 2px 8px 0 rgba(0,0,0,0.03);
+    margin-left: auto;
+    margin-right: auto;
+    transition: background 0.3s, border-color 0.3s;
+  }
+
+  .nav-glass-link {
+    color: hsl(var(--muted-foreground));
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 500;
+    padding: 7px 16px;
+    border-radius: 20px;
+    transition: color 0.3s, background 0.3s;
+    background: transparent;
+    display: flex;
+    align-items: center;
+  }
+
+  .nav-glass-link:hover {
+    color: hsl(var(--foreground));
+    background: hsl(var(--muted) / 0.18);
+  }
+
+  .nav-glass-link-active {
+    color: hsl(var(--primary-foreground));
+    background: hsl(var(--foreground) / 0.85);
+    transition: color 0.3s, background 0.3s;
+  }
+
+  @media (max-width: 768px) {
+    .nav-glass-container {
+      width: 90%;
+      padding: 6px 10px;
+    }
+    .nav-glass-link {
+      font-size: 0.95rem;
+      padding: 6px 10px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .nav-glass-container {
+      width: 95%;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 3px;
+    }
+    .nav-glass-link {
+      font-size: 0.9rem;
+      padding: 4px 8px;
+    }
+  }
+}
