@@ -10,7 +10,7 @@
 ## 🚀 Live Demo
 
 Check out the live version:  
-👉 [College Nexus 911](https://papapanda0nrocks.github.io/college-nexus911-main/)
+👉 [College Nexus 911](https://papapanda0nrocks.github.io/)
 
 ---
 
